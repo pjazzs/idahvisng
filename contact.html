@@ -175,6 +175,21 @@
     <script src="assets/js/slick-slider.js"></script>
     <script src="assets/js/custom.js"></script>
     <script>
+      document.getElementById("myForm").addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    // Get values from input fields
+    const subject = document.getElementById("subject").value;
+    const message = document.getElementById("message").value;
+
+    // Generate the mailto link
+    const mailtoLink = `mailto:your-email@example.com?subject=${encodeURIComponent(
+      subject
+    )}&body=${encodeURIComponent(message)}`;
+
+    // Open user's default email client with the pre-filled subject and message
+    window.location.href = mailtoLink;
+  })
         //according to loftblog tut
         $('.nav li:first').addClass('active');
 
