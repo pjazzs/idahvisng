@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="assets/css/owl.css">
     <link rel="stylesheet" href="assets/css/lightbox.css">
    
+    <script src="https://kit.fontawesome.com/2ca4de6121.js" crossorigin="anonymous"></script>
 
     </head>
 
@@ -78,7 +79,7 @@
                                   <li><a href="meeting-details.html">Post Graduate Studies</a></li>
                               </ul>
                           </li> -->
-                          <li class="#"><a href="#">Jobs</a></li> 
+                          <li class="#"><a href="jobs.html">Jobs</a></li> 
                           <li class="#"><a href="contact.html">Contact</a></li> 
                       </ul>        
                       <a class='menu-trigger'>
@@ -106,12 +107,12 @@
                   </div>
                   <div class="col-lg-4">
                     <fieldset>
-                      <input name="name" type="text" id="name" placeholder="ENTER YOURNAME...*" required>
+                      <input name="name" type="text" id="name" placeholder="YOUR NAME...*" required>
                     </fieldset>
                   </div>
                   <div class="col-lg-4">
                     <fieldset>
-                    <input name="email" type="text" id="email" pattern="[^ @]*@[^ @]*" placeholder=" ENTER YOUR EMAIL..." required>
+                    <input name="email" type="text" id="email" placeholder="YOUR EMAIL..." required>
                   </fieldset>
                   </div>
                   <div class="col-lg-4">
@@ -126,7 +127,7 @@
                   </div>
                   <div class="col-lg-12">
                     <fieldset>
-                      <button type="submit" id="form-submit" class="button">SEND MESSAGE NOW</button>
+                      <button type="submit" id="form-submit" class="button" onclick="validateEmail()">SEND MESSAGE NOW</button>
                     </fieldset>
                   </div>
                 </div>
@@ -138,19 +139,21 @@
           <div class="right-info">
             <ul>
               <li>
-                <h6>Phone Number</h6>
-                <span>+234 00000000</span>
+                <h6><i class="fa-solid fa-phone" style="margin-right: 4px;"></i> Phone Number  </h6>
+                <span>+234  <strong class="num">901</strong>  <strong class="num">110 </strong> <strong class="num">0963</strong>  </span>
+                <span id="spp">+234 <strong class="num"> 903 </strong><strong class="num">600 </strong>  <strong class="num">9426</strong>  </span>
               </li>
               <li>
-                <h6>Email Address</h6>
+                <h6> <i class="fa-solid fa-envelope" style="margin-right: 4px;"></i> Email Address</h6>
                 <span>info@idahvisng.com</span>
               </li>
               <li>
-                <h6>Street Address</h6>
-                <span>xxxxxx</span>
+                <h6> <i class="fa-solid fa-location-dot" style="margin-right: 4px;"></i> Address</h6>
+                <span class="sp">27 Herbert Macauly Streets, Port Harcourt.</span>
+                <span class="sp">59 Barakou street off Aminu Kano crescent, Wuse 2 Abuja.</span>
               </li>
               <li>
-                <h6>Website URL</h6>
+                <h6><i class="fa-solid fa-window-maximize" style="margin-right: 4px;"></i></i> Website URL</h6>
                 <span>www.idahvisng.com</span>
               </li>
             </ul>
@@ -175,6 +178,23 @@
     <script src="assets/js/slick-slider.js"></script>
     <script src="assets/js/custom.js"></script>
     <script>
+      
+      //Email Validation
+     const validateEmail = () => {
+    const emailInput = document.querySelector('#email');
+    const email = emailInput.value;
+
+    // Regular expression for basic email validation
+    const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+    if (emailPattern.test(email)) {
+        alert('Valid email address');
+    } else {
+        alert('Invalid email address');
+    }
+}
+
+
       document.getElementById("contact").addEventListener("submit", function (event) {
     event.preventDefault();
 
